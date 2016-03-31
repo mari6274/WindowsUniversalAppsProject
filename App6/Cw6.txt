@@ -1,0 +1,12 @@
+Treść zdania:
+
+Używając poniższego modelu należy stworzyć aplikację, która pozwoli tworzyć listę zadań z wykorzystaniem wzorca MVVM. Aplikacja będzie zawierała ekran prezentujący listę zadań i "application bar" zawierający przycisk "dodaj". Po "tapnięciu" w  element listy jesteśmy przekierowywani na kolejny ekran, gdzie możemy edytować treść zadania (pola Title oraz Value) oraz gdzie można usunąć aktualnie wybrane zadanie. Pola Id, OwnerId oraz CreatedAt przydadzą się w późniejszym etapie projektu.
+
+public class ToDoTask
+{
+    public string Id { get; set; }
+    public string Title { get; set; }
+    public string Value { get; set; }
+    public string OwnerId { get; set; }
+    public string CreatedAt { get; set; }
+}
