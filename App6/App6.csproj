@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ToDoTasksVm.cs" />
+    <Compile Include="ViewModels\ToDoTaskVm.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\VmLocator.cs" />
   </ItemGroup>

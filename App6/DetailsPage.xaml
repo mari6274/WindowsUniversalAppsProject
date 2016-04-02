@@ -4,7 +4,7 @@
     xmlns:local="using:App6"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Models="using:App6.Models"
+    xmlns:vm="using:App6.ViewModels"
     x:Class="App6.DetailsPage"
     mc:Ignorable="d">
 
@@ -17,7 +17,7 @@
         </CommandBar>
     </Page.BottomAppBar>
     <Page.DataContext>
-        <Models:ToDoTask />
+        <vm:ToDoTaskVm />
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -26,8 +26,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBox Text="{Binding Title}" Margin="10" PlaceholderText="Title" />
-        <TextBox Text="{Binding Value}" Grid.Row="1" Margin="10" PlaceholderText="Description" AcceptsReturn="True" />
+        <TextBlock Name="TitleTextBlock" Text="{Binding Title}" Margin="10" FontSize="32"/>
+        <TextBox Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" PlaceholderText="Title" Visibility="Collapsed"/>
+        <TextBlock Name="ValueTextBlock" Text="{Binding Value}" Margin="10" Grid.Row="1"/>
+        <TextBox Name="ValueTextBox" Text="{Binding Value, Mode=TwoWay}" Grid.Row="1" Margin="10" PlaceholderText="Description" AcceptsReturn="True" Visibility="Collapsed" />
     </Grid>
 
 </Page>

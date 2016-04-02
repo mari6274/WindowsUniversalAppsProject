@@ -1,5 +1,4 @@
-﻿using System;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using App6.Models;
@@ -14,28 +13,25 @@ namespace App6
     /// </summary>
     public sealed partial class DetailsPage : Page
     {
+        private readonly ToDoTaskVm _taskVm;
         private ToDoTask _toDoTask;
-        private readonly ToDoTask _task;
 
         public DetailsPage()
         {
             InitializeComponent();
-            _task = (ToDoTask) DataContext;
+            _taskVm = (ToDoTaskVm) DataContext;
         }
 
         private void Accept_OnClick(object sender, RoutedEventArgs e)
         {
-            var task = _task as ToDoTask;
-            _toDoTask.Title = task.Title;
-            _toDoTask.Value = task.Value;
+            CopyTask(_toDoTask, _taskVm);
             Frame.GoBack();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _toDoTask = (ToDoTask) e.Parameter;
-            _task.Title = _toDoTask.Title;
-            _task.Value = _toDoTask.Value;
+            CopyTask(_taskVm, _toDoTask);
         }
 
         private void Edit_OnClick(object sender, RoutedEventArgs e)
@@ -45,6 +41,11 @@ namespace App6
 
         private void EnableEditMode()
         {
+            TitleTextBlock.Visibility = Visibility.Collapsed;
+            TitleTextBox.Visibility = Visibility.Visible;
+            ValueTextBlock.Visibility = Visibility.Collapsed;
+            ValueTextBox.Visibility = Visibility.Visible;
+
             AcceptButton.Visibility = Visibility.Visible;
             CancelButton.Visibility = Visibility.Visible;
             EditButton.Visibility = Visibility.Collapsed;
@@ -58,15 +59,32 @@ namespace App6
 
         private void Cancel_OnClick(object sender, RoutedEventArgs e)
         {
+            CopyTask(_taskVm, _toDoTask);
             DisableEditMode();
+        }
 
+        private void CopyTask(ToDoTask to, ToDoTaskVm from)
+        {
+            to.Title = from.Title;
+            to.Value = from.Value;
+        }
+
+        private void CopyTask(ToDoTaskVm to, ToDoTask from)
+        {
+            to.Title = from.Title;
+            to.Value = from.Value;
         }
 
         private void DisableEditMode()
         {
-            AcceptButton.Visibility = Visibility.Visible;
-            CancelButton.Visibility = Visibility.Visible;
-            EditButton.Visibility = Visibility.Collapsed;
+            TitleTextBlock.Visibility = Visibility.Visible;
+            TitleTextBox.Visibility = Visibility.Collapsed;
+            ValueTextBlock.Visibility = Visibility.Visible;
+            ValueTextBox.Visibility = Visibility.Collapsed;
+
+            AcceptButton.Visibility = Visibility.Collapsed;
+            CancelButton.Visibility = Visibility.Collapsed;
+            EditButton.Visibility = Visibility.Visible;
         }
     }
 }
