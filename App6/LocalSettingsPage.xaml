@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="App6.LocalSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App6"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="40">
+        <StackPanel.Resources>
+            <Style x:Key="CommonStyle" TargetType="Control">
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+            <Style BasedOn="{StaticResource CommonStyle}" TargetType="TextBox"/>
+            <Style BasedOn="{StaticResource CommonStyle}" TargetType="Button"/>
+        </StackPanel.Resources>
+        
+        <TextBox Name="MyTextBox"/>
+        <Button Content="Save" Click="SaveText_OnClick"/>
+    </StackPanel>
+</Page>

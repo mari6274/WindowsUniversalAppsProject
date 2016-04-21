@@ -104,6 +104,9 @@
     <Compile Include="DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LocalSettingsPage.xaml.cs">
+      <DependentUpon>LocalSettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ToDoTask.cs" />
     <Compile Include="TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LocalSettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

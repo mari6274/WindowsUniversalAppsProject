@@ -30,6 +30,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="Add" Label="Add" Click="AddButton_OnClick"/>
+            <AppBarButton Icon="Setting" Label="LocalSettings" Click="LocalSettingsButton_OnClick"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

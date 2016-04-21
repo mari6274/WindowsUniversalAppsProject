@@ -26,7 +26,16 @@ namespace App6
 
         private void ToDoTaskItem_OnTapped(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof (DetailsPage), ((ListBox) sender).SelectedItem);
+            var selectedItem = ((ListBox) sender).SelectedItem;
+            if (selectedItem != null)
+            {
+                Frame.Navigate(typeof(DetailsPage), selectedItem);
+            }
+        }
+
+        private void LocalSettingsButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LocalSettingsPage));
         }
     }
 }
