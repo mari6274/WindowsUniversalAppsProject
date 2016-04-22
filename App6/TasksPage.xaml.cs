@@ -37,5 +37,10 @@ namespace App6
         {
             Frame.Navigate(typeof(LocalSettingsPage));
         }
+
+        private void RefreshButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            VmLocator.ToDoTasksVm.GetTasks();
+        }
     }
 }

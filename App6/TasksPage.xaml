@@ -31,6 +31,7 @@
         <CommandBar>
             <AppBarButton Icon="Add" Label="Add" Click="AddButton_OnClick"/>
             <AppBarButton Icon="Setting" Label="LocalSettings" Click="LocalSettingsButton_OnClick"/>
+            <AppBarButton Icon="Sync" Label="Refresh" Click="RefreshButton_OnClick"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -25,6 +25,7 @@ namespace App6
         private void Accept_OnClick(object sender, RoutedEventArgs e)
         {
             CopyTask(_toDoTask, _taskVm);
+            VmLocator.ToDoTasksVm.Edit(_toDoTask);
             Frame.GoBack();
         }
 
@@ -53,7 +54,7 @@ namespace App6
 
         private void Delete_OnClick(object sender, RoutedEventArgs e)
         {
-            VmLocator.ToDoTasksVm.TasksList.Remove(_toDoTask);
+            VmLocator.ToDoTasksVm.Remove(_toDoTask);
             Frame.GoBack();
         }
 

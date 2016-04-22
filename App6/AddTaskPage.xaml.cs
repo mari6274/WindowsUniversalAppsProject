@@ -19,7 +19,7 @@ namespace App6
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            VmLocator.ToDoTasksVm.TasksList.Add((ToDoTask) DataContext);
+            VmLocator.ToDoTasksVm.Add((ToDoTask) DataContext);
             Frame.GoBack();
         }
     }
