@@ -14,8 +14,13 @@
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="32" />
-                <TextBlock Grid.Row="1" Text="{Binding Value}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Value}" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedAt}" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Top" />
             </Grid>
         </DataTemplate>
     </Page.Resources>

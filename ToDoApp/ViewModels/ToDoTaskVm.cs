@@ -25,5 +25,15 @@ namespace App6.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string CreatedAt
+        {
+            get { return _task.CreatedAt; }
+            set
+            {
+                _task.CreatedAt = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }
