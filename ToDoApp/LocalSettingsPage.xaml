@@ -16,6 +16,6 @@
         </StackPanel.Resources>
         
         <TextBox Name="MyTextBox"/>
-        <Button Content="Save" Click="SaveText_OnClick"/>
+        <Button x:Uid="Save" Click="SaveText_OnClick"/>
     </StackPanel>
 </Page>

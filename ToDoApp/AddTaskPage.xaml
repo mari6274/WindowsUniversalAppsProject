@@ -3,13 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:models="using:ToDoApp.Models"
     x:Class="ToDoApp.AddTaskPage"
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Add" Label="Add" Click="Add_OnClick" />
+            <AppBarButton x:Uid="Add" Icon="Add" Click="Add_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -19,10 +18,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Add Task"
-                   FontSize="32" />
-        <TextBox Text="{Binding Title, Mode=TwoWay}" Grid.Row="1" Margin="10" PlaceholderText="Title" />
-        <TextBox Text="{Binding Value, Mode=TwoWay}" Grid.Row="2" Margin="10" PlaceholderText="Description"
+        <TextBlock x:Uid="AddTask" FontSize="32" />
+        <TextBox x:Uid="TaskTitle" Text="{Binding Title, Mode=TwoWay}" Grid.Row="1" Margin="10" />
+        <TextBox x:Uid="TaskDescription" Text="{Binding Value, Mode=TwoWay}" Grid.Row="2" Margin="10"
                  AcceptsReturn="True" />
     </Grid>
 </Page>

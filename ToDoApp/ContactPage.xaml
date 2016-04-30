@@ -9,9 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Padding="20">
-            <TextBlock Text="Author" FontSize="32" />
+            <TextBlock x:Uid="Author" FontSize="32" />
             <TextBlock Text="Mariusz Mączkowski" />
-            <TextBlock Text="E-Mail" FontSize="32" />
+            <TextBlock x:Uid="Email" FontSize="32" />
             <TextBlock Text="marmac@st.amu.edu.pl" />
         </StackPanel>
     </Grid>

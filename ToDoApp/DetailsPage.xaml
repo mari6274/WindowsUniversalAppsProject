@@ -9,11 +9,11 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Delete" Label="Delete" Click="Delete_OnClick" />
-            <AppBarButton Name="AcceptButton" Icon="Accept" Label="Accept" Click="Accept_OnClick"
+            <AppBarButton x:Uid="Delete" Icon="Delete" Click="Delete_OnClick" />
+            <AppBarButton x:Uid="Accept" Name="AcceptButton" Icon="Accept" Click="Accept_OnClick"
                           Visibility="Collapsed" />
-            <AppBarButton Name="EditButton" Icon="Edit" Label="Edit" Click="Edit_OnClick" />
-            <AppBarButton Name="CancelButton" Icon="Cancel" Label="Edit" Click="Cancel_OnClick" Visibility="Collapsed" />
+            <AppBarButton x:Uid="Edit" Name="EditButton" Icon="Edit" Click="Edit_OnClick" />
+            <AppBarButton x:Uid="Cancel" Name="CancelButton" Icon="Cancel" Click="Cancel_OnClick" Visibility="Collapsed" />
         </CommandBar>
     </Page.BottomAppBar>
     <Page.DataContext>
@@ -26,12 +26,12 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Name="TitleTextBlock" Text="{Binding Title}" Margin="10" FontSize="32" />
-        <TextBox Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" PlaceholderText="Title"
+        <TextBlock Name="TitleTextBlock" Text="{Binding Title}" Margin="10" FontSize="32" Grid.Row="0" />
+        <TextBox x:Uid="Title" Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" Grid.Row="0"
                  Visibility="Collapsed" />
         <TextBlock Name="ValueTextBlock" Text="{Binding Value}" Margin="10" Grid.Row="1" />
-        <TextBox Name="ValueTextBox" Text="{Binding Value, Mode=TwoWay}" Grid.Row="1" Margin="10"
-                 PlaceholderText="Description" AcceptsReturn="True" Visibility="Collapsed" />
+        <TextBox x:Uid="Description" Name="ValueTextBox" Text="{Binding Value, Mode=TwoWay}" Grid.Row="1" Margin="10"
+                 AcceptsReturn="True" Visibility="Collapsed" />
     </Grid>
 
 </Page>

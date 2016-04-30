@@ -37,10 +37,10 @@
     </ListBox>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Add" Label="Add" Click="AddButton_OnClick" />
-            <AppBarButton Icon="Setting" Label="LocalSettings" Click="LocalSettingsButton_OnClick" />
-            <AppBarButton Icon="Sync" Label="Refresh" Click="RefreshButton_OnClick" />
-            <AppBarButton Icon="ContactInfo" Label="Contact" Click="ContactButton_OnClick" />
+            <AppBarButton x:Uid="Add" Icon="Add" Click="AddButton_OnClick" />
+            <AppBarButton x:Uid="Settings" Icon="Setting" Click="LocalSettingsButton_OnClick" />
+            <AppBarButton x:Uid="Refresh" Icon="Sync" Click="RefreshButton_OnClick" />
+            <AppBarButton x:Uid="Contact" Icon="ContactInfo" Click="ContactButton_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
