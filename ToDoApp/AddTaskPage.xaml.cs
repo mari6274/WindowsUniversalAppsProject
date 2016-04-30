@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using ToDoApp.Models;
 using ToDoApp.ViewModels;
@@ -12,14 +13,26 @@ namespace ToDoApp
     /// </summary>
     public sealed partial class AddTaskPage : Page
     {
+        private ToDoTask _toDoTask;
+
         public AddTaskPage()
         {
             InitializeComponent();
+            _toDoTask = new ToDoTask()
+            {
+                Id = "0",
+                Title = "",
+                Value = "",
+                OwnerId = "",
+                CreatedAt = ""
+            };
+            DataContext = _toDoTask;;
         }
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            VmLocator.ToDoTasksVm.Add((ToDoTask) DataContext);
+            _toDoTask.CreatedAt = DateTime.Now.ToString();
+            VmLocator.ToDoTasksVm.Add(_toDoTask);
             Frame.GoBack();
         }
     }

@@ -12,10 +12,6 @@
             <AppBarButton Icon="Add" Label="Add" Click="Add_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
-    <Page.DataContext>
-        <models:ToDoTask />
-    </Page.DataContext>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
           Padding="20">
         <Grid.RowDefinitions>
