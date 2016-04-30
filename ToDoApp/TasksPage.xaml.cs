@@ -41,5 +41,10 @@ namespace ToDoApp
         {
             VmLocator.ToDoTasksVm.GetTasks();
         }
+
+        private void ContactButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ToDoApp.ContactPage));
+        }
     }
 }

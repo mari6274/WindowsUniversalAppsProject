@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="9c0c814c-1663-46d8-814c-4143ac867439" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ToDoApp</DisplayName>
-    <PublisherDisplayName>Mariusz</PublisherDisplayName>
+    <PublisherDisplayName>Mariusz Mączkowski</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
