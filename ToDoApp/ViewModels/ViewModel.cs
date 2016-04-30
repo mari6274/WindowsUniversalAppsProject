@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace App6.ViewModels
+namespace ToDoApp.ViewModels
 {
     class ViewModel : INotifyPropertyChanged
     {

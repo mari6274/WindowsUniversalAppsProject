@@ -3,10 +3,10 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using App6.Models;
 using Newtonsoft.Json;
+using ToDoApp.Models;
 
-namespace App6.ViewModels
+namespace ToDoApp.ViewModels
 {
     internal class ToDoTasksVm : ViewModel
     {

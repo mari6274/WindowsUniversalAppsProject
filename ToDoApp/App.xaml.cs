@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.ApplicationInsights;
 
-namespace App6
+namespace ToDoApp
 {
     /// <summary>
     ///     Provides application-specific behavior to supplement the default Application class.

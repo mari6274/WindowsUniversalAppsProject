@@ -1,11 +1,11 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using App6.Models;
-using App6.ViewModels;
+using ToDoApp.Models;
+using ToDoApp.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace App6
+namespace ToDoApp
 {
     /// <summary>
     ///     An empty page that can be used on its own or navigated to within a Frame.

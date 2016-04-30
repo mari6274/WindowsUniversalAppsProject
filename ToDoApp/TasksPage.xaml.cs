@@ -1,12 +1,11 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
-using App6.Models;
-using App6.ViewModels;
+using ToDoApp.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace App6
+namespace ToDoApp
 {
     /// <summary>
     ///     An empty page that can be used on its own or navigated to within a Frame.
@@ -21,7 +20,7 @@ namespace App6
 
         private void AddButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (AddTaskPage));
+            Frame.Navigate(typeof (ToDoApp.AddTaskPage));
         }
 
         private void ToDoTaskItem_OnTapped(object sender, TappedRoutedEventArgs e)
@@ -29,13 +28,13 @@ namespace App6
             var selectedItem = ((ListBox) sender).SelectedItem;
             if (selectedItem != null)
             {
-                Frame.Navigate(typeof(DetailsPage), selectedItem);
+                Frame.Navigate(typeof(ToDoApp.DetailsPage), selectedItem);
             }
         }
 
         private void LocalSettingsButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(LocalSettingsPage));
+            Frame.Navigate(typeof(ToDoApp.LocalSettingsPage));
         }
 
         private void RefreshButton_OnClick(object sender, RoutedEventArgs e)

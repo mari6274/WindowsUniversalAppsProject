@@ -1,6 +1,6 @@
-using App6.Models;
+using ToDoApp.Models;
 
-namespace App6.ViewModels
+namespace ToDoApp.ViewModels
 {
     class ToDoTaskVm : ViewModel
     {
