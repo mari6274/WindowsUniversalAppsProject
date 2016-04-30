@@ -15,28 +15,32 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="32" />
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Value}" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedAt}" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedAt}" FontSize="12"
+                           HorizontalAlignment="Right" VerticalAlignment="Top" />
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    
-    <ListBox ItemsSource="{Binding TasksList}" 
+
+    <ListBox ItemsSource="{Binding TasksList}"
              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
              ItemTemplate="{StaticResource ToDoTaskTemplate}"
              Tapped="ToDoTaskItem_OnTapped">
-        
+        <ListBox.ItemContainerStyle>
+            <Style TargetType="ListBoxItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+            </Style>
+        </ListBox.ItemContainerStyle>
     </ListBox>
-
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Add" Label="Add" Click="AddButton_OnClick"/>
-            <AppBarButton Icon="Setting" Label="LocalSettings" Click="LocalSettingsButton_OnClick"/>
-            <AppBarButton Icon="Sync" Label="Refresh" Click="RefreshButton_OnClick"/>
+            <AppBarButton Icon="Add" Label="Add" Click="AddButton_OnClick" />
+            <AppBarButton Icon="Setting" Label="LocalSettings" Click="LocalSettingsButton_OnClick" />
+            <AppBarButton Icon="Sync" Label="Refresh" Click="RefreshButton_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
