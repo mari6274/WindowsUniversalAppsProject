@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="40">
+    <StackPanel Style="{StaticResource StackPanelStyle}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel.Resources>
             <Style x:Key="CommonStyle" TargetType="Control">
                 <Setter Property="Margin" Value="0,0,0,10"/>

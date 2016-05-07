@@ -7,12 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Padding="20">
-            <TextBlock x:Uid="Author" FontSize="32" />
-            <TextBlock Text="Mariusz Mączkowski" />
-            <TextBlock x:Uid="Email" FontSize="32" />
-            <TextBlock Text="marmac@st.amu.edu.pl" />
-        </StackPanel>
-    </Grid>
+    <StackPanel Style="{StaticResource StackPanelStyle}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Uid="Author" Style="{StaticResource TitleTextBlockStyle}"/>
+        <TextBlock Text="Mariusz Mączkowski" Style="{StaticResource BodyTextBlockStyle}"/>
+        <TextBlock x:Uid="Email" Style="{StaticResource TitleTextBlockStyle}"/>
+        <TextBlock Text="marmac@st.amu.edu.pl" Style="{StaticResource BodyTextBlockStyle}"/>
+    </StackPanel>
 </Page>
