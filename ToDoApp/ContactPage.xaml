@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Style="{StaticResource StackPanelStyle}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Style="{StaticResource StackPanelStyle}">
         <TextBlock x:Uid="Author" Style="{StaticResource TitleTextBlockStyle}"/>
         <TextBlock Text="Mariusz Mączkowski" Style="{StaticResource BodyTextBlockStyle}"/>
         <TextBlock x:Uid="Email" Style="{StaticResource TitleTextBlockStyle}"/>

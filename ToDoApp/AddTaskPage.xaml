@@ -11,7 +11,7 @@
             <AppBarButton x:Uid="Add" Icon="Add" Click="Add_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
-    <Grid Style="{StaticResource GridStyle}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Style="{StaticResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />

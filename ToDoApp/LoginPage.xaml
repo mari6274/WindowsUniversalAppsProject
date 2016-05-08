@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Frame Style="{StaticResource FrameStyle}">
         <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelStyle}">
             <TextBlock x:Uid="Login" Style="{StaticResource TitleTextBlockStyle}" Margin="10" />
             <TextBox Text="{Binding UserName, Mode=TwoWay}" Margin="10"/>
             <Button x:Uid="LoginAction" Click="LoginButton_OnClick" Margin="10"/>
         </StackPanel>
-    </Grid>
+    </Frame>
 </Page>

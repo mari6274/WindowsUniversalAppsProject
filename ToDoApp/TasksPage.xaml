@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <conv:ShortValueConverter x:Name="ShortValueConverter"/>
+        <conv:ShortValueConverter x:Name="ShortValueConverter" />
         <DataTemplate x:Key="ToDoTaskTemplate">
             <Grid>
                 <Grid.RowDefinitions>
@@ -16,11 +16,13 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Value, Converter={StaticResource ShortValueConverter}}" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="{Binding Value, Converter={StaticResource ShortValueConverter}}"
+                           Style="{StaticResource BodyTextBlockStyle}" />
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedAt}" FontSize="12"
                            HorizontalAlignment="Right" VerticalAlignment="Top" />
             </Grid>
@@ -28,12 +30,12 @@
     </Page.Resources>
 
     <ListBox ItemsSource="{Binding TasksList}"
-             Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
              ItemTemplate="{StaticResource ToDoTaskTemplate}"
-             Tapped="ToDoTaskItem_OnTapped">
+             Tapped="ToDoTaskItem_OnTapped" 
+             Style="{StaticResource ListBoxStyle}">
         <ListBox.ItemContainerStyle>
             <Style TargetType="ListBoxItem">
-                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             </Style>
         </ListBox.ItemContainerStyle>
     </ListBox>

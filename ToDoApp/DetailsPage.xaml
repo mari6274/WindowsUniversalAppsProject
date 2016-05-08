@@ -21,7 +21,7 @@
         <viewModels:ToDoTaskVm />
     </Page.DataContext>
 
-    <Grid Style="{StaticResource GridStyle}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Style="{StaticResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="18.295" />
             <RowDefinition Height="33.705" />
