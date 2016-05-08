@@ -17,7 +17,7 @@ namespace ToDoApp.ViewModels
 
         public ToDoTasksVm()
         {
-            GetTasks();
+            GetUserTasks();
         }
 
         public ObservableCollection<ToDoTask> TasksList
@@ -39,7 +39,7 @@ namespace ToDoApp.ViewModels
             return JsonConvert.DeserializeObject<ToDoTask>(content);
         }
 
-        public async void GetTasks()
+        public async void GetUserTasks()
         {
             var client = new HttpClient();
             var response = await client.GetAsync(TASK_RESOURCE_URL);
@@ -49,7 +49,10 @@ namespace ToDoApp.ViewModels
             _tasksList.Clear();
             foreach (var toDoTask in toDoTasks)
             {
-                _tasksList.Add(toDoTask);
+                if (toDoTask.OwnerId == VmLocator.UserNameVm.UserName)
+                {
+                    _tasksList.Add(toDoTask);
+                }
             }
         }
 

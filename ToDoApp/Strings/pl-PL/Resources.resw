@@ -141,6 +141,9 @@
   <data name="Edit.Label" xml:space="preserve">
     <value>Edytuj</value>
   </data>
+  <data name="LoginAction.Content" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
   <data name="Refresh.Label" xml:space="preserve">
     <value>Odśwież</value>
   </data>

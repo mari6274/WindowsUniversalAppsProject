@@ -32,6 +32,7 @@ namespace ToDoApp
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
             _toDoTask.CreatedAt = DateTime.Now.ToString();
+            _toDoTask.OwnerId = VmLocator.UserNameVm.UserName;
             VmLocator.ToDoTasksVm.Add(_toDoTask);
             Frame.GoBack();
         }

@@ -12,15 +12,19 @@ namespace ToDoApp
     /// </summary>
     public sealed partial class TasksPage : Page
     {
+        private readonly ToDoTasksVm _toDoTasksVm;
+
         public TasksPage()
         {
             InitializeComponent();
-            DataContext = VmLocator.ToDoTasksVm;
+            _toDoTasksVm = VmLocator.ToDoTasksVm;
+            _toDoTasksVm.GetUserTasks();
+            DataContext = _toDoTasksVm;
         }
 
         private void AddButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (ToDoApp.AddTaskPage));
+            Frame.Navigate(typeof (AddTaskPage));
         }
 
         private void ToDoTaskItem_OnTapped(object sender, TappedRoutedEventArgs e)
@@ -28,23 +32,23 @@ namespace ToDoApp
             var selectedItem = ((ListBox) sender).SelectedItem;
             if (selectedItem != null)
             {
-                Frame.Navigate(typeof(ToDoApp.DetailsPage), selectedItem);
+                Frame.Navigate(typeof(DetailsPage), selectedItem);
             }
         }
 
         private void LocalSettingsButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ToDoApp.LocalSettingsPage));
+            Frame.Navigate(typeof(LocalSettingsPage));
         }
 
         private void RefreshButton_OnClick(object sender, RoutedEventArgs e)
         {
-            VmLocator.ToDoTasksVm.GetTasks();
+            _toDoTasksVm.GetUserTasks();
         }
 
         private void ContactButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ToDoApp.ContactPage));
+            Frame.Navigate(typeof(ContactPage));
         }
     }
 }
