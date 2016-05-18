@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using ToDoApp.Models;
@@ -31,10 +32,13 @@ namespace ToDoApp
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            _toDoTask.CreatedAt = DateTime.Now.ToString();
-            _toDoTask.OwnerId = VmLocator.UserNameVm.UserName;
-            VmLocator.ToDoTasksVm.Add(_toDoTask);
-            Frame.GoBack();
+            if (TitleTextBox.Valid)
+            {
+                _toDoTask.CreatedAt = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+                _toDoTask.OwnerId = VmLocator.UserNameVm.UserName;
+                VmLocator.ToDoTasksVm.Add(_toDoTask);
+                Frame.GoBack();
+            }
         }
     }
 }
