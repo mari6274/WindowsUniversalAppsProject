@@ -31,7 +31,7 @@
 
     <ListBox ItemsSource="{Binding TasksList}"
              ItemTemplate="{StaticResource ToDoTaskTemplate}"
-             Tapped="ToDoTaskItem_OnTapped" 
+             Tapped="ToDoTaskItem_OnTapped"
              Style="{StaticResource ListBoxStyle}">
         <ListBox.ItemContainerStyle>
             <Style TargetType="ListBoxItem">
@@ -42,9 +42,11 @@
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton x:Uid="Add" Icon="Add" Click="AddButton_OnClick" />
-            <AppBarButton x:Uid="Settings" Icon="Setting" Click="LocalSettingsButton_OnClick" />
             <AppBarButton x:Uid="Refresh" Icon="Sync" Click="RefreshButton_OnClick" />
-            <AppBarButton x:Uid="Contact" Icon="ContactInfo" Click="ContactButton_OnClick" />
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="Contact" Icon="ContactInfo" Click="ContactButton_OnClick" />
+                <AppBarButton x:Uid="ChangeUser" Icon="OtherUser" Click="ChangeUserButton_OnClick" />
+            </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

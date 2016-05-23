@@ -36,11 +36,6 @@ namespace ToDoApp
             }
         }
 
-        private void LocalSettingsButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(LocalSettingsPage));
-        }
-
         private void RefreshButton_OnClick(object sender, RoutedEventArgs e)
         {
             _toDoTasksVm.GetUserTasks();
@@ -49,6 +44,11 @@ namespace ToDoApp
         private void ContactButton_OnClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ContactPage));
+        }
+
+        private void ChangeUserButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
         }
     }
 }

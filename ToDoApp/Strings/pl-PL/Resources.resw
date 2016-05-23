@@ -132,6 +132,9 @@
   <data name="Cancel.Label" xml:space="preserve">
     <value>Anuluj</value>
   </data>
+  <data name="ChangeUser.Label" xml:space="preserve">
+    <value>Zmień użytkownika</value>
+  </data>
   <data name="Contact.Label" xml:space="preserve">
     <value>Kontakt</value>
   </data>
