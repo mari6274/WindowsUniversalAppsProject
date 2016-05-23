@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:ToDoApp.ViewModels"
+    xmlns:controls="using:ToDoApp.Controls"
     x:Class="ToDoApp.DetailsPage"
     mc:Ignorable="d">
 
@@ -29,7 +30,7 @@
         </Grid.RowDefinitions>
         <TextBlock Name="TitleTextBlock" Text="{Binding Title}" Margin="10" Grid.Row="0"
                    Style="{StaticResource TitleTextBlockStyle}" Grid.RowSpan="2" />
-        <TextBox x:Uid="Title" Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" Grid.Row="0"
+        <controls:MaxLenTextBox x:Uid="Title" x:Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" Grid.Row="0"
                  Visibility="Collapsed" Grid.RowSpan="2" />
         <ScrollViewer Grid.Row="2">
             <TextBlock Name="ValueTextBlock" Text="{Binding Value}" Margin="10" 
