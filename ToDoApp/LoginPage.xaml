@@ -11,7 +11,7 @@
         <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelStyle}">
             <TextBlock x:Uid="Login" Style="{StaticResource TitleTextBlockStyle}" Margin="10" />
             <TextBox Text="{Binding UserName, Mode=TwoWay}" Margin="10"/>
-            <Button x:Uid="LoginAction" Click="LoginButton_OnClick" Margin="10"/>
+            <Button x:Uid="LoginAction" Click="LoginButton_OnClick" Margin="10" HorizontalAlignment="Stretch"/>
         </StackPanel>
     </Frame>
 </Page>

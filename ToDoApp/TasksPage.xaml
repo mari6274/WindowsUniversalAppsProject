@@ -10,7 +10,7 @@
     <Page.Resources>
         <conv:ShortValueConverter x:Name="ShortValueConverter" />
         <DataTemplate x:Key="ToDoTaskTemplate">
-            <Grid>
+            <Grid Style="{StaticResource ListItemGridStyle}">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />

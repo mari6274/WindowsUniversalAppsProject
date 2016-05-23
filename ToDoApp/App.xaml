@@ -20,6 +20,10 @@
         <Style x:Key="ListBoxStyle" TargetType="ListBox">
             <Setter Property="Background" Value="{ThemeResource MainBg}" />
         </Style>
+        <Style x:Key="ListItemGridStyle" TargetType="Grid">
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="0 1 0 0"/>
+        </Style>
     </Application.Resources>
 
 </Application>
