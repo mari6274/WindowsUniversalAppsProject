@@ -1,4 +1,9 @@
-﻿namespace ToDoApp.Models
+﻿using System.Net.Http;
+using System.Text;
+using Newtonsoft.Json;
+using ToDoApp.ViewModels;
+
+namespace ToDoApp.Models
 {
     public class ToDoTask
     {

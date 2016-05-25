@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Linq;
 using ToDoApp.Models;
+using ToDoApp.Services;
 
 namespace ToDoApp.ViewModels
 {
@@ -12,13 +10,8 @@ namespace ToDoApp.ViewModels
     {
         private const string AppLocalFolder = "MyApp";
         private const string TasksJsonFile = "tasks_list.json";
-        private static readonly string TASK_RESOURCE_URL = "http://windowsphoneuam.azurewebsites.net/api/ToDoTasks";
+        private readonly RestClient _restClient = new RestClient();
         private ObservableCollection<ToDoTask> _tasksList = new ObservableCollection<ToDoTask>();
-
-        public ToDoTasksVm()
-        {
-            GetUserTasks();
-        }
 
         public ObservableCollection<ToDoTask> TasksList
         {
@@ -30,60 +23,35 @@ namespace ToDoApp.ViewModels
             }
         }
 
-        private async Task<ToDoTask> PostTask(ToDoTask task)
+        private void RefreshCurrentUserTasks(List<ToDoTask> toDoTasks)
         {
-            var client = new HttpClient();
-            var serialized = JsonConvert.SerializeObject(task);
-            var response = await client.PostAsync(TASK_RESOURCE_URL, new StringContent(serialized, Encoding.UTF8, "application/json"));
-            var content = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<ToDoTask>(content);
-        }
-
-        public async void GetUserTasks()
-        {
-            var client = new HttpClient();
-            var response = await client.GetAsync(TASK_RESOURCE_URL);
-            var content = await response.Content.ReadAsStringAsync();
-            var toDoTasks = JsonConvert.DeserializeObject<List<ToDoTask>>(content);
-
+            var currentUserName = VmLocator.UserNameVm.UserName;
             _tasksList.Clear();
-            foreach (var toDoTask in toDoTasks)
-            {
-                if (toDoTask.OwnerId == VmLocator.UserNameVm.UserName)
-                {
-                    _tasksList.Add(toDoTask);
-                }
-            }
+            toDoTasks.Where(task => task.OwnerId == currentUserName).ToList().ForEach(_tasksList.Add);
         }
 
         public void Add(ToDoTask toDoTask)
         {
-            Task<ToDoTask> returnedTask = PostTask(toDoTask);
+            var returnedTask = _restClient.PostTask(toDoTask);
             returnedTask.GetAwaiter().OnCompleted(() => TasksList.Add(returnedTask.Result));
         }
 
         public void Remove(ToDoTask toDoTask)
         {
             TasksList.Remove(toDoTask);
-            DeleteTask(toDoTask);
+            _restClient.DeleteTask(toDoTask);
         }
 
-        private async void DeleteTask(ToDoTask toDoTask)
-        {
-            var client = new HttpClient();
-            var response = await client.DeleteAsync(TASK_RESOURCE_URL + "/" + toDoTask.Id);
-        }
 
         public void Edit(ToDoTask toDoTask)
         {
-            PutTask(toDoTask);
+            _restClient.PutTask(toDoTask);
         }
 
-        private async void PutTask(ToDoTask toDoTask)
+        public async void RefreshTasks()
         {
-            var client = new HttpClient();
-            var serialized = JsonConvert.SerializeObject(toDoTask);
-            await client.PutAsync(TASK_RESOURCE_URL + "/" + toDoTask.Id, new StringContent(serialized, Encoding.UTF8, "application/json"));
+            var result = await _restClient.GetUserTasks();
+            RefreshCurrentUserTasks(result);
         }
     }
 }

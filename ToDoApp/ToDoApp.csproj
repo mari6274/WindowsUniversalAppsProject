@@ -117,6 +117,7 @@
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ToDoTask.cs" />
+    <Compile Include="Services\RestClient.cs" />
     <Compile Include="TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
     </Compile>

@@ -34,7 +34,7 @@ namespace ToDoApp
         {
             if (TitleTextBox.Valid)
             {
-                _toDoTask.CreatedAt = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+                _toDoTask.CreatedAt = String.Format("dd-MM-yy HH:mm:ss", DateTime.Now.ToString(CultureInfo.CurrentCulture));
                 _toDoTask.OwnerId = VmLocator.UserNameVm.UserName;
                 VmLocator.ToDoTasksVm.Add(_toDoTask);
                 Frame.GoBack();

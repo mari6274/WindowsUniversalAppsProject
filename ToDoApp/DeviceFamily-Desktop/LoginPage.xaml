@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Uid="Login" Style="{StaticResource TitleTextBlockStyle}" Margin="10" Grid.ColumnSpan="2"/>
-            <TextBox Text="{Binding UserName, Mode=TwoWay}" Margin="10" Grid.Row="1"/>
+            <TextBox Text="{Binding UserName, Mode=TwoWay}" Margin="10" Grid.Row="1" Grid.Column="0"/>
             <Button x:Uid="LoginAction" Click="LoginButton_OnClick" Margin="10" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1"/>
         </Grid>
     </Frame>

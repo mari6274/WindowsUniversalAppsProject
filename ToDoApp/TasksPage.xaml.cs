@@ -18,7 +18,7 @@ namespace ToDoApp
         {
             InitializeComponent();
             _toDoTasksVm = VmLocator.ToDoTasksVm;
-            _toDoTasksVm.GetUserTasks();
+            _toDoTasksVm.RefreshTasks();
             DataContext = _toDoTasksVm;
         }
 
@@ -38,7 +38,7 @@ namespace ToDoApp
 
         private void RefreshButton_OnClick(object sender, RoutedEventArgs e)
         {
-            _toDoTasksVm.GetUserTasks();
+            _toDoTasksVm.RefreshTasks();
         }
 
         private void ContactButton_OnClick(object sender, RoutedEventArgs e)

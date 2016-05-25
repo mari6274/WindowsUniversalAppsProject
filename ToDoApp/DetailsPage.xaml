@@ -30,10 +30,11 @@
         </Grid.RowDefinitions>
         <TextBlock Name="TitleTextBlock" Text="{Binding Title}" Margin="10" Grid.Row="0"
                    Style="{StaticResource TitleTextBlockStyle}" Grid.RowSpan="2" />
-        <controls:MaxLenTextBox x:Uid="Title" x:Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10" Grid.Row="0"
-                 Visibility="Collapsed" Grid.RowSpan="2" />
+        <controls:MaxLenTextBox x:Uid="Title" x:Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" Margin="10"
+                                Grid.Row="0"
+                                Visibility="Collapsed" Grid.RowSpan="2" />
         <ScrollViewer Grid.Row="2">
-            <TextBlock Name="ValueTextBlock" Text="{Binding Value}" Margin="10" 
+            <TextBlock Name="ValueTextBlock" Text="{Binding Value}" Margin="10"
                        Style="{StaticResource BodyTextBlockStyle}" />
         </ScrollViewer>
         <TextBox x:Uid="Description" Name="ValueTextBox" Text="{Binding Value, Mode=TwoWay}" Grid.Row="2" Margin="10"
