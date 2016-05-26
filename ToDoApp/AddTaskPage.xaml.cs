@@ -14,7 +14,7 @@ namespace ToDoApp
     /// </summary>
     public sealed partial class AddTaskPage : Page
     {
-        private ToDoTask _toDoTask;
+        private readonly ToDoTask _toDoTask;
 
         public AddTaskPage()
         {
